@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <div class="card-head row justify-content-center align-items-center">
                             <div class="col-10">
-                                <h5 class="card-title">Clients</h5>
+                                <h5 class="card-title">Clients ({{ $clients->count() }})</h5>
                                 <h6 class="card-subtitle">Tous vos clients sont ici </h6>
                             </div>
                             <div class="form-group col-2">

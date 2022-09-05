@@ -3,10 +3,10 @@
         <div class="login-box card">
             <div class="card-body">
                 <form class="form-horizontal form-material" id="loginform" wire:submit.prevent="submit">
-                    {{-- <div class="text-center"><img class="m-b-30 m-t-30 ms-auto me-auto"
+                    <div class="text-center"><img class="m-b-30 m-t-30 ms-auto me-auto"
                             src="{{ asset('dist/images/logo-light-icon.png') }}" height="40px" alt="-"
                             srcset="">
-                    </div> --}}
+                    </div>
                     <h3 class="text-center m-b-20">S'identifier </h3>
                     <h6 class="text-center m-b-30">Connectez-vous à votre compte s'il vous plaît </h6>
                     @if (session()->has('message'))

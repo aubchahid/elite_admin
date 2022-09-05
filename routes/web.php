@@ -3,11 +3,15 @@
 use App\Http\Controllers\Controller;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Dashboard\Clients;
+use App\Http\Livewire\Dashboard\DeliveryNotes;
 use App\Http\Livewire\Dashboard\DetailFacture;
 use App\Http\Livewire\Dashboard\Facture;
 use App\Http\Livewire\Dashboard\Main;
+use App\Http\Livewire\Dashboard\NewDelivery;
 use App\Http\Livewire\Dashboard\NewFacture;
 use App\Http\Livewire\Dashboard\Products;
+use App\Http\Livewire\Dashboard\Profile;
+use App\Models\DeliveryNote;
 use App\Models\Invoice;
 use Illuminate\Support\Facades\Route;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -33,9 +37,12 @@ Route::middleware(['auth'])->group(function () {
     Route::any('/products', Products::class);
     Route::any('/factures', Facture::class);
     Route::any('/new-factures', NewFacture::class);
-    Route::any('/facture/detail/{id}', DetailFacture::class);
-    Route::any('/print/{id}', function ($id) {
+    Route::any('/delivary-notes', DeliveryNotes::class);
+    Route::any('/profile', Profile::class);
 
+
+
+    Route::any('/print/{id}', function ($id) {
         $invoice = Invoice::find($id);
         view()->share('invoice', $invoice);
         $pdf = PDF::loadView('livewire.dashboard.facture-pdf', $invoice->toArray());

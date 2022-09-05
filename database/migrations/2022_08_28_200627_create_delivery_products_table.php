@@ -16,7 +16,7 @@ class CreateDeliveryProductsTable extends Migration
         Schema::create('delivery_products', function (Blueprint $table) {
             $table->id();
             $table->foreignId('delivery_notes_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('invoice_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('product_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->integer('qte');
             $table->timestamps();
         });

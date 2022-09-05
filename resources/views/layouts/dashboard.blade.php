@@ -119,11 +119,7 @@
                                 <i class="icon-grid"></i>
                                 <span class="hide-menu">Page d'accueil</span></a>
                         </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="docs-start.html" aria-expanded="false"><i
-                                    class="icon-basket-loaded"></i>
-                                <span class="hide-menu">Bons de livraison</span></a>
-                        </li>
+
                         <li>
                             <a class="waves-effect waves-dark" href="/factures" aria-expanded="false"><i
                                     class="icon-docs"></i>
@@ -141,7 +137,7 @@
                         </li>
                         <li class="nav-small-cap">--- Menu secondaire </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="docs-start.html" aria-expanded="false"><i
+                            <a class="waves-effect waves-dark" href="/profile" aria-expanded="false"><i
                                     class="icon-user"></i>
                                 <span class="hide-menu">Profil</span></a>
                         </li>

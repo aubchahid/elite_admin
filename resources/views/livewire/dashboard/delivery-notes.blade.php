@@ -2,16 +2,16 @@
     <div class="container-fluid">
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h4 class="text-themecolor">Factures</h4>
+                <h4 class="text-themecolor">Bons de livraison</h4>
             </div>
             <div class="col-md-7 align-self-center text-end">
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">DMPRO</a></li>
-                        <li class="breadcrumb-item active">Factures</li>
+                        <li class="breadcrumb-item active">Bons de livraison</li>
                     </ol>
-                    <a type="button" href="/new-factures"
-                        class="btn btn-info d-none d-lg-block m-l-15 text-white">Nouvelle facture
+                    <a type="button" href="/new-delivary"
+                        class="btn btn-info d-none d-lg-block m-l-15 text-white">Nouvelle Bons
                     </a>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-head row justify-content-center align-items-center">
-                            <h5 class="card-title col-10">Factures ({{ $invoices->count() }})</h5>
+                            <h5 class="card-title col-10">Bons de livraison ({{ $notes->count() }})</h5>
                             <div class="form-group col-2">
                                 <input type="text" class="form-control form-control-line" placeholder="Rechercher"
                                     wire:model="search">
@@ -33,50 +33,33 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ID </th>
+                                        <th>ID</th>
                                         <th>Client</th>
-                                        <th>Prix ​​total </th>
-                                        <th>Date</th>
-                                        <th>Status</th>
+                                        <th>Qté commandée</th>
+                                        <th>Qté livrée</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($invoices as $item)
+                                    @foreach ($notes as $item)
                                         <tr>
-                                            <td class="align-middle"> <a href="/detail-facture/{{ $item->id }}">
-                                                    {{ '#' . $item->id }}</a></td>
+                                            <td class="align-middle">{{ $item->id }}</td>
                                             <td class="align-middle">{{ $item->client->name }}</td>
-                                            <td class="align-middle">{{ $item->sumInvoice() }} DHS</td>
-                                            <td class="align-middle">{{ $item->created_at }}</td>
-                                            <td class="align-middle">
-                                                <span
-                                                    class="label label-{{ $item->status ? 'success' : 'warning' }}">{{ $item->status ? 'Payé' : 'Non-Payé' }}</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a type="button" class="btn btn-warning"
-                                                    href="/print/{{ $item->id }}"><i class="icon-printer"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#deleteFacture"
-                                                    wire:click="$set('idFacture',{{ $item->id }})"><i
-                                                        class="icon-trash"></i>
-                                                </button>
-                                                <a href="/facture/detail/{{ $item->id }}" class="btn btn-info">
-                                                    <i class="icon-eye"></i></a>
-                                            </td>
+                                            <td class="align-middle">{{ $item->qteCommande() }}</td>
+
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-center">
-                                {{ $invoices->links() }}
+                                {{ $notes->links() }}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <div wire:ignore.self id="deleteFacture" class="modal" tabindex="-1" role="dialog" aria-labelledby="vcenter">
         <div class="modal-dialog modal-dialog-centered">
