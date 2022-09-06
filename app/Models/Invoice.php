@@ -42,10 +42,12 @@ class Invoice extends Model
     }
 
 
-    public function totalNotPaid($collection)
+    public function totalNotPaid($invoice)
     {
         $total = 0;
-
-        return $collection->count();
+        foreach ($invoice as $item) {
+            $total += $item->sumInvoice();
+        }
+        return $total;
     }
 }

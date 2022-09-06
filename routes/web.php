@@ -37,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
     Route::any('/products', Products::class);
     Route::any('/factures', Facture::class);
     Route::any('/new-factures', NewFacture::class);
-    Route::any('/delivary-notes', DeliveryNotes::class);
+    Route::any('/facture/detail/{id}', DetailFacture::class);
     Route::any('/profile', Profile::class);
 
 

@@ -18,18 +18,8 @@
             </div>
         </div>
         <div class="row">
-            <!-- Column -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Bons de livraison</h4>
-                        <div class="text-end">
-                            <h3 class="font-light">{{ $delivery->count() }}</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
+
+            <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Factures</h4>
@@ -41,12 +31,12 @@
             </div>
             <!-- Column -->
             <!-- Column -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Factures Payées</h4>
                         <div class="text-end">
-                            <h3 class="font-light">0 DHS</h3>
+                            <h3 class="font-light">{{ $invoicesPaid }} DHS</h3>
                         </div>
 
                     </div>
@@ -54,12 +44,12 @@
             </div>
             <!-- Column -->
             <!-- Column -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Factures Impayées</h4>
                         <div class="text-end">
-                            <h3 class="font-light">0 DHS </h3>
+                            <h3 class="font-light">{{ $invoicesNotPaid }} DHS </h3>
                         </div>
 
                     </div>
